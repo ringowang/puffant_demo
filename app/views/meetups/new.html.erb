@@ -1,0 +1,5 @@
+<%= form_for @meetup, :url => user_meetups_path(@user) do |f| %>
+  <%= f.label :meetup_name %>
+   <%= f.text_field :name %>
+   <%= f.submit %>
+<% end %>

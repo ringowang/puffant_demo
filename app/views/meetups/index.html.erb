@@ -1,0 +1,6 @@
+<h3>Comments</h3>
+<% @meetups.each_with_index do |meetup, index| %>
+  <%= meetup.comment %>
+  <br>
+<% end %>
+<%= link_to 'Back', user_path(@user) %>
