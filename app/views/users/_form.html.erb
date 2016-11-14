@@ -1,4 +1,5 @@
 <%= form_for(@user) do |f| %>
+
   <% if user.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
@@ -11,28 +12,28 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %>
-    <%= f.text_field :name %>
+  <div class="form-group col-sm-6">
+    <div class="form-group">
+      <%= f.label "name"%>
+      <%= f.text_field :name, :class=>"form-control" %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :email %>
+      <%= f.email_field :email, :class=>"form-control" %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :password %>
+      <%= f.password_field :password, :class=>"form-control" %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :please_confirmation %>
+      <%= f.password_field :password_confirmation, :class=>"form-control" %>
+    </div>
+
+    <%= f.submit "Complete", class: "btn btn-primary"%>
   </div>
 
-  <div class="field">
-    <%= f.label :email %>
-    <%= f.email_field :email %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password %>
-    <%= f.password_field :password %>
-  </div>
-
-  <div class="field">
-    <%= f.label :please_confirmation %>
-    <%= f.password_field :password_confirmation %>
-  </div>
-
-
-  <div class="actions">
-    <%= f.submit "Complete"%>
-  </div>
 <% end %>

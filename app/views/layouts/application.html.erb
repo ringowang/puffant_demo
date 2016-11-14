@@ -11,8 +11,11 @@
   <body>
     <div class="container-fluid">
       <%= render "common/navbar" %>
-      <%= render 'layouts/header' %>
+      <!-- 在导航栏里面搞了登陆
+       <%= render 'layouts/header' %>-->
+      <%= render "common/flashes" %>
       <%= yield %>
     </div>
+    <%= render 'common/footer' %>
   </body>
 </html>
