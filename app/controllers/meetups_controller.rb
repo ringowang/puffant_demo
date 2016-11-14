@@ -16,7 +16,7 @@ class MeetupsController < ApplicationController
   def create
     @meetup = @user.meetups.new(meetup_params)
     if @meetup.save
-      redirect_to user_meetups_path(@user)
+      redirect_to user_path(@user)
     else
       render  :new
     end
